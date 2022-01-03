@@ -1,0 +1,18 @@
+<li><hr role="separator" class="dropdown-divider"></li>
+
+
+<li><a href="#" {{action (mut this.showRollerDice) true}} class="dropdown-item">Roll Dice</a></li> 
+
+<BsModalSimple
+  @title="Roller Dice"
+  @closeTitle="Cancel"
+  @submitTitle="Roll"
+  @size={{null}}
+  @fade={{true}}
+  @open={{this.showRollerDice}}
+  @onSubmit={{action "rollDice"}}
+  @onHide={{action (mut this.showRollerDice) null}}>
+  
+  <Input @type="text" size=25 id="diceString" @value={{this.diceString}} />
+  <p class="hint">Enter a dice string in the form 5d6 or 2d10.</p>
+</BsModalSimple>
