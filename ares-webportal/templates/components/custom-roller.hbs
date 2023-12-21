@@ -1,0 +1,30 @@
+<BsModalSimple @title="Add Ability Roll" @closeTitle="Cancel" @submitTitle="Roll" @size={{null}} @fade={{true}} @open={{this.selectCustomRoll}} @onSubmit={{action "addRoll"}} @onHide={{action (mut this.selectCustomRoll) false}}>
+
+    <p class="hint">You can use a rating number to roll for a NPC. An average attribute is automatically factored in, so rolling a skill of "3" will roll 5 dice total for the NPC.</p>
+    
+
+    <p><b>Regular Roll</b></p>
+    <p>Select an ability, or type one (plus modifiers, if applicable) in the box.</p>
+	<p>Rote? (check the box if you have Rote)	<Input @type="checkbox" @checked={{this.hasRote}} /> </p>
+	
+	
+    <select onchange={{action (mut this.explode) value="target.value"}}>
+        <option value=t>Explode on 10</option>
+        <option value=n>Explode on 9+</option>
+        <option value=e>Explode on 8+</option>
+		<option value=f}>No Explode</option>
+    </select>
+	
+	
+    <Input @type="text" size={{25}} id="rollString" @enter={{action "addRoll"}} @value={{this.rollString}} />
+	
+	
+    <p>If rolling explosion:  Enter only dice number (ex. 5)</p>
+    <p>If rolling normal:  Enter dice number and sides (ex. 5d6)</p>
+    <p>OPTIONAL: Enter a reason for rolling</p>
+	<Input @type="text" size={{25}} id="reason" @enter={{action "addRoll"}} @value={{this.reason}} />
+
+
+   <hr>
+
+  </BsModalSimple>
