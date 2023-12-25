@@ -1,3 +1,5 @@
+
+
 You need to add 2 lines of code to have the button show up in the dropdown menu:
 
 In the live-scene-control.hbs located in ares-webportal\app\templates\components :
@@ -13,6 +15,7 @@ There is a picture included to help show you where to add these lines of code.
 Next:
 add custom-roller.js to ares-webportal\app\components
 add custom-roller.hbs to ares-webportal\app\templates\components
+add a folder called customroller in aresmush\plugins
 add the contents of the plugin folder to aresmush\plugins
 
 
